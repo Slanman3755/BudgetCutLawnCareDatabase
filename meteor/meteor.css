@@ -1,1 +1,20 @@
 /* CSS declarations go here */
+.panel-default {
+    border-color:#000;
+}
+
+.panel-heading {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.panel-default > .panel-heading {
+    color: #000;
+    background-color:#7AC447;
+    border-color:#000;
+    font-family: cursive;
+}
+
+.input {
+    padding: 5px;
+}

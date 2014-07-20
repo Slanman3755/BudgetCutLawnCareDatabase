@@ -1,11 +1,12 @@
 Properties = new Meteor.Collection('properties'); 
-
-if (Meteor.isClient) {
-
-}
+//key info: id, customer name, address, schedule(contract length, frequency), area, gate size, service fee, fee deadline, estimated completion time, pictures, thumbnail, commerical/residentia;
+//summer and winter
+//employee comments
+//customer comments
+//search by id, name, address
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+    Meteor.startup(function () {
+    
+    });
 }
