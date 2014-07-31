@@ -1,4 +1,9 @@
 /* CSS declarations go here */
+
+body {
+    font-family: cursive;
+}
+
 .panel-default {
     border-color:#000;
 }
@@ -12,9 +17,19 @@
     color: #000;
     background-color:#7AC447;
     border-color:#000;
-    font-family: cursive;
 }
 
 .input {
     padding: 5px;
+}
+
+.thumbnail-img {
+    max-height: 100px;
+    width: auto;
+}
+
+.warning-flag[warning="true"] {
+    outline: none;
+    box-shadow: 0 0 13px rgba(255, 0, 0, 0.8);
+    transition: box-shadow ease-in 500ms;
 }

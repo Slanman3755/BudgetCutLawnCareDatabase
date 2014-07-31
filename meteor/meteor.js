@@ -1,5 +1,4 @@
-Properties = new Meteor.Collection('properties'); 
-//key info: id, customer name, address, schedule(contract length, frequency), area, gate size, service fee, fee deadline, estimated completion time, pictures, thumbnail, commerical/residentia;
+//key info: id, customer name, address, schedule(contract length, frequency), area, gate size, service fee, fee deadline, estimated completion time, pictures, thumbnail, commerical/residential
 //summer and winter
 //employee comments
 //customer comments

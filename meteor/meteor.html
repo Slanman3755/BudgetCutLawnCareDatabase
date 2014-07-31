@@ -6,6 +6,11 @@
 <template name="main">
     {{#if currentUser}}
         {{> yield}}
+        <footer>
+            <div align="center">
+                <button type="button" name="logout" class="logout btn btn-default">Logout</button>
+            </div>
+        </footer> 
     {{else}}
         {{> login}}
     {{/if}}
@@ -21,12 +26,12 @@
             </div>
             <div class="panel-body">
                 <div align="center">
-                    <div class="input-group input">
-                        <span class="input-group-addon">Username</span>
+                    <div class="input-group input username-input-group">
+                        <span class="input-group-addon warning-flag username-addon">Username</span>
                         <input type="text" name="username" class="username form-control">
                     </div>
-                    <div class="input-group input">
-                        <span class="input-group-addon">Password</span>
+                    <div class="input-group input password-input-group">
+                        <span class="input-group-addon warning-flag password-addon">Password</span>
                         <input type="password" name="password" class="password form-control">
                     </div>
                     <button type="button" name="login" class="btn btn-default input login">Login</button>
@@ -34,6 +39,7 @@
             </div>
         </div>
     </div>
+    <div class="warning">{{loginMessage}}</div>
 </template>
 
 <template name="search">
@@ -41,18 +47,31 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div align="center">
-                    <input type="text" placeholder="Search" name="search" class="form-control search">
+                    <input type="text" autocomplete="off" placeholder="Search" name="search" class="form-control search">
                 </div>
             </div>
             {{#if propertyResults}}
                 <div class="panel-body">
-                    <ul class="list-group">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Picture
+                                </th>
+                                <th>
+                                    Address
+                                </th>
+                                <th>
+                                    Customer Name
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {{#each propertyResults}}
-                            <li class="list-group-item">
-                                {{> propertylisting}}
-                            </li>
+                            {{> propertylisting}}
                         {{/each}}
-                    </ul>
+                        </tbody>
+                    </table>
                 </div>
             {{/if}}
         </div>
@@ -60,7 +79,15 @@
 </template>
 
 <template name="propertylisting">
-    <div>
-        {{name}}
-    </div>
+    <tr>
+        <td>
+            <img class="thumbnail-img" src="{{thumbnailurl}}" alt="...">
+        </td>
+        <td>
+            {{address}}
+        </td>
+        <td>
+            {{customername}}
+        </td>
+    </tr>
 </template>
