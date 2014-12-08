@@ -6,6 +6,8 @@
 standard-app-packages
 autopublish
 insecure
-iron-router
 accounts-password
-bootstrap-3
+meteor-platform
+iron:router
+mrt:bootstrap-3
+
